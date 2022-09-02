@@ -1,0 +1,143 @@
+@import '../../node_modules/scss-reset/reset';
+@import './config';
+@import './header';
+@import "./slider";
+@import "./_footer";
+@import './modal';
+@import 'fonts';
+
+.wrapper {
+  background-color: $main-bg-color;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.h2-text {
+  font: $secondary-title-font;
+  color: white;
+  text-align: center;
+  padding: 41px 0px;
+  padding-top: 42px;
+  padding-left: 8px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  height: 100%;
+  // background-color: black;
+}
+main {
+  padding-bottom: 40px;
+}
+footer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.block-2 {
+  &__wrapper {
+
+  }
+  &__grid {
+    display: grid;
+    row-gap: 13px;
+    grid-template: repeat(2,  198px) / repeat(auto-fit,minmax(162px, 392px));
+  grid-template-areas: "a b b b b b b" "c c c c c d d";
+   grid-auto-flow: dense;
+  }
+  &__item {
+  background-color: #3ADE4B;
+    &:nth-child(n) {
+      position: relative;
+      font: $card-font;
+      color: $main-text-color;
+    }
+    &:nth-child(1) {
+      grid-area: a;
+      @include card-num('1')
+    }
+    &:nth-child(2) {
+      margin-left: 13px;
+      grid-area: b;
+      @include card-num('2')
+    }
+    &:nth-child(3) {
+      grid-area: c;
+      margin-right: 13px;
+      @include card-num('3')
+
+    };
+    &:nth-child(4){
+      grid-area: d;
+      @include card-num('4')
+    }
+  }
+}
+@media (max-width: 998px) {
+  .block-2 {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      grid-template-areas: unset;
+    }
+    &__item {
+      &:nth-child(n) {
+        grid-area: unset;
+        margin: 0;
+      }
+    }
+  }
+}
+@media (max-width: 578px){
+  .block-2__grid {
+    grid-template-columns: repeat(auto-fill,  100%);
+    grid-template-rows: 100px 100px;
+  }
+  .block-2__item {
+    height: 100px;
+  }
+}
+
+.block-3 {
+  padding: 0px 25px;
+}
+
+.block-3__wrapper {
+  padding: 25px;
+  border-radius: 30px;
+  background-color: $block-3-bg-color;
+}
+
+.block-3__container {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.block-3__item {
+  width: 100%;
+  aspect-ratio: 1/1;
+  @extend %block-3-card;
+  object-fit: cover;
+}
+.utp {
+  margin-top: 40px;
+  &__wrapper {
+    display: flex;
+    gap: 9px;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__btn {
+  }
+  &__text{
+  font: $common-font;
+    color: $main-text-color;
+  }
+}
+.btn-popup {
+  @extend  %btn-popup
+
+}

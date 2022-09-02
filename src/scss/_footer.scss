@@ -1,0 +1,1 @@
+.footer {  background-color: $footer-bg-color;  padding: 27.5px 0px;}.footer__wrapper {  width: 63.6752%;  margin: 0px auto;  transform: translateX(-8px);}.footer__nav {  display: flex;}@media (max-width: 578px) {  .footer {    &__wrapper {      width: 80%;    }    &__nav {      flex-wrap: wrap;    }  }}

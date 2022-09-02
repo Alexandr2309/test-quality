@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    @@include('html/header.html',{})
+    <main class="main">
+      @@include('html/slider.html',{})
+      <div class="h2-text">
+        <h2>H2 text</h2>
+      </div>
+      @@include('html/block-2.html',{})
+      <div class="h2-text">
+        <h2>H2 text</h2>
+      </div>
+      @@include('html/block-3.html',{})
+      <div class="utp">
+        <div class="utp__wrapper">
+          <div class="utp__text">Text utp</div>
+          <button class="utp__btn btn-popup">
+            Open pop-up button
+          </button>
+        </div>
+      </div>
+    </main>
+    @@include('html/footer.html',{})
+  </div>
+
+  @@include('html/popup.html',{})
+
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>
